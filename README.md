@@ -1,4 +1,5 @@
 ![Tests](https://github.com/KintsuKayaba/ssgs-calc/actions/workflows/node.js.yml/badge.svg)
+![Coverage](https://codecov.io/gh/KintsuKayaba/ssgs-calc/branch/main/graph/badge.svg)
 
 # ssgs-calc
 
