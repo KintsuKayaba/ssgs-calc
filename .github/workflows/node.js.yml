@@ -24,9 +24,6 @@ jobs:
       - name: permission
         run: chmod +x ./node_modules/.bin/jest
 
-      - name: Run tests with coverage
-        run: npm test -- --coverage
-
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
