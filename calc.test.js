@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide } = require("./calc");
+const { add, subtract, multiply, divide, power } = require("./calc");
 
 test("addizione", () => {
   expect(add(2, 3)).toBe(5);
@@ -18,4 +18,8 @@ test("divisione", () => {
 
 test("divisione per zero", () => {
   expect(() => divide(10, 0)).toThrow("Impossibile dividere per zero");
+});
+
+test("potenza", () => {
+  expect(power(2, 3)).toBe(8);
 });

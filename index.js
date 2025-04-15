@@ -1,43 +1,65 @@
 const readline = require("readline-sync");
-const { add, subtract, multiply, divide } = require("./calc");
+const { add, subtract, multiply, divide, power } = require("./calc");
 
-console.log(
-  "Operazioni disponibili:\n1. Addizione\n2. Sottrazione\n3. Moltiplicazione\n4. Divisione"
-);
+const saluti = ["A presto, e che la forza sia con te!", "Piccolo padawan"];
 
-const choice = readline.question("Scegli un'operazione (1-4): ");
+function scegliOperazione() {
+  console.log(
+    "\nOperazioni disponibili:\n1. Addizione\n2. Sottrazione\n3. Moltiplicazione\n4. Divisione\n5. Potenza"
+  );
 
-if (!["1", "2", "3", "4"].includes(choice)) {
-  console.error("Operazione non valida. 😢");
-  process.exit(1);
+  let choice;
+  while (true) {
+    choice = readline.question("Scegli un'operazione (1-5): ");
+    if (["1", "2", "3", "4", "5"].includes(choice)) break;
+    console.log("❌ Operazione non valida. Riprova.");
+  }
+  return choice;
 }
 
-const num1 = parseFloat(readline.question("Inserisci il primo numero: "));
-const num2 = parseFloat(readline.question("Inserisci il secondo numero: "));
-
-if (isNaN(num1) || isNaN(num2)) {
-  console.error("Parametro non valido. Devi inserire dei numeri. 😔");
-  process.exit(1);
+function chiediNumero(prompt) {
+  while (true) {
+    const input = readline.question(prompt);
+    const numero = parseFloat(input);
+    if (!isNaN(numero)) return numero;
+    console.log("❌ Inserisci un numero valido.");
+  }
 }
 
-let result;
-try {
+function eseguiOperazione(choice, num1, num2) {
   switch (choice) {
     case "1":
-      result = add(num1, num2);
-      break;
+      return add(num1, num2);
     case "2":
-      result = subtract(num1, num2);
-      break;
+      return subtract(num1, num2);
     case "3":
-      result = multiply(num1, num2);
-      break;
+      return multiply(num1, num2);
     case "4":
-      result = divide(num1, num2);
-      break;
+      return divide(num1, num2);
+    case "5":
+      return power(num1, num2);
   }
-  console.log(`Risultato: ${result}`);
-} catch (err) {
-  console.error(`Errore: ${err.message}`);
-  process.exit(1);
 }
+
+console.log("👋 Benvenuto in ssgs-calc!");
+
+let continua = true;
+
+while (continua) {
+  const scelta = scegliOperazione();
+  const num1 = chiediNumero("Inserisci il primo numero: ");
+  const num2 = chiediNumero("Inserisci il secondo numero: ");
+
+  try {
+    const risultato = eseguiOperazione(scelta, num1, num2);
+    console.log(`✅ Risultato: ${risultato}`);
+  } catch (err) {
+    console.error(`❌ Errore: ${err.message}`);
+  }
+
+  const risposta = readline.question("Vuoi fare un'altra operazione? (s/n): ");
+  continua = risposta.trim().toLowerCase() === "s";
+}
+
+const salutoFinale = saluti[Math.floor(Math.random() * saluti.length)];
+console.log(`🎉 ${salutoFinale}`);

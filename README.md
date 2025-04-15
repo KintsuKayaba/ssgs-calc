@@ -12,6 +12,13 @@ Questa applicazione consente di eseguire le seguenti operazioni matematiche:
 - **Sottrazione**
 - **Moltiplicazione**
 - **Divisione**
+- **Potenza**
+
+### Funzionalità avanzate
+
+- Possibilità di **ripetere le operazioni** nella stessa sessione
+- **Gestione degli errori** in input (richiesta di reinserimento)
+- Saluto finale **randomico** per chiudere con un tocco simpatico
 
 ## Requisiti
 
@@ -25,6 +32,7 @@ Questa applicazione consente di eseguire le seguenti operazioni matematiche:
    ```bash
    git clone https://github.com/KintsuKayaba/ssgs-calc.git
    cd ssgs-calc
+
    ```
 
 2. Installa le dipendenze:
@@ -45,15 +53,23 @@ Segui le istruzioni nella linea di comando per scegliere un'operazione e inserir
 ### Esempio di utilizzo
 
 ```bash
+👋 Benvenuto in ssgs-calc!
+
 Operazioni disponibili:
 1. Addizione
 2. Sottrazione
 3. Moltiplicazione
 4. Divisione
-Scegli un'operazione (1-4): 1
-Inserisci il primo numero: 5
+5. Potenza
+
+Scegli un'operazione (1-5): 5
+Inserisci il primo numero: 2
 Inserisci il secondo numero: 3
-Risultato: 8
+✅ Risultato: 8
+
+Vuoi fare un'altra operazione? (s/n): n
+🎉 A presto, e che la forza sia con te!
+
 ```
 
 ## Test

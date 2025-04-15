@@ -11,5 +11,7 @@ function divide(a, b) {
   if (b === 0) throw new Error("Impossibile dividere per zero");
   return a / b;
 }
-
-module.exports = { add, subtract, multiply, divide };
+function power(a, b) {
+  return Math.pow(a, b);
+}
+module.exports = { add, subtract, multiply, divide, power };
