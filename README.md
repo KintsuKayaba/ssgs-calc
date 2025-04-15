@@ -1,3 +1,5 @@
+![Tests](https://github.com/KintsuKayaba/ssgs-calc/actions/workflows/node.js.yml/badge.svg)
+
 # ssgs-calc
 
 Una semplice calcolatrice da linea di comando scritta in Node.js.
@@ -14,3 +16,4 @@ Una semplice calcolatrice da linea di comando scritta in Node.js.
 ```bash
 npm install
 npm start
+```
