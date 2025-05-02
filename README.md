@@ -22,7 +22,7 @@ Questa applicazione consente di eseguire le seguenti operazioni matematiche:
 
 ## Requisiti
 
-- **Node.js** versione 14 o superiore
+- **Node.js** versione 18.x o superiore
 - **npm** (gestore di pacchetti Node.js)
 
 ## Installazione
@@ -32,12 +32,11 @@ Questa applicazione consente di eseguire le seguenti operazioni matematiche:
    ```bash
    git clone https://github.com/KintsuKayaba/ssgs-calc.git
    cd ssgs-calc
-
    ```
 
 2. Installa le dipendenze:
    ```bash
-   npm install
+   npm ci
    ```
 
 ## Uso
@@ -69,7 +68,6 @@ Inserisci il secondo numero: 3
 
 Vuoi fare un'altra operazione? (s/n): n
 🎉 A presto, e che la forza sia con te!
-
 ```
 
 ## Test
@@ -80,11 +78,18 @@ Per eseguire i test e verificare il corretto funzionamento dell'applicazione, ut
 npm test
 ```
 
-I test sono implementati utilizzando **Jest** e includono casi di test per tutte le operazioni supportate.
+I test sono implementati utilizzando **Jest** e includono casi di test per tutte le operazioni supportate. Inoltre, viene generato un report di copertura nella directory `coverage/`.
 
 ## Workflow CI
 
 Questo progetto utilizza GitHub Actions per eseguire automaticamente i test su ogni push o pull request verso il branch `main`. Il workflow è configurato nel file `.github/workflows/node.js.yml`.
+
+### Dettagli del Workflow
+
+- **Versioni di Node.js testate**: 18.x e 20.x
+- **Installazione delle dipendenze**: Utilizzo di `npm ci` per garantire build riproducibili.
+- **Test**: Esecuzione di `npm test` per verificare il corretto funzionamento e generare il report di copertura.
+- **Upload del report di copertura**: Il report generato viene caricato come artefatto.
 
 ## Struttura del progetto
 
@@ -94,3 +99,4 @@ Questo progetto utilizza GitHub Actions per eseguire automaticamente i test su o
 - **`package.json`**: File di configurazione del progetto Node.js.
 - **`package-lock.json`**: File di lock per le dipendenze.
 - **`.github/workflows/node.js.yml`**: Configurazione del workflow CI.
+- **`coverage/`**: Directory contenente i report di copertura generati da Jest.
