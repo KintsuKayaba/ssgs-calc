@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide, power } = require("./calc");
+const { add, subtract, multiply, divide, power } = require("../src/calc");
 
 test("addizione", () => {
   expect(add(2, 3)).toBe(5);
