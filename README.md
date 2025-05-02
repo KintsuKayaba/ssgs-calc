@@ -82,23 +82,15 @@ npm test
 
 I test sono implementati utilizzando **Jest** e includono casi di test per tutte le operazioni supportate.
 
-## Copertura del codice
-
-Per generare un report di copertura del codice, esegui:
-
-```bash
-npm test -- --coverage
-```
-
 ## Workflow CI
 
 Questo progetto utilizza GitHub Actions per eseguire automaticamente i test su ogni push o pull request verso il branch `main`. Il workflow è configurato nel file `.github/workflows/node.js.yml`.
 
 ## Struttura del progetto
 
-- **`index.js`**: File principale che gestisce l'interazione con l'utente.
-- **`calc.js`**: Contiene le funzioni matematiche di base.
-- **`calc.test.js`**: File di test per verificare il corretto funzionamento delle funzioni matematiche.
+- **`src/index.js`**: File principale che gestisce l'interazione con l'utente.
+- **`src/calc.js`**: Contiene le funzioni matematiche di base.
+- **`tests/calc.test.js`**: File di test per verificare il corretto funzionamento delle funzioni matematiche.
 - **`package.json`**: File di configurazione del progetto Node.js.
 - **`package-lock.json`**: File di lock per le dipendenze.
 - **`.github/workflows/node.js.yml`**: Configurazione del workflow CI.
