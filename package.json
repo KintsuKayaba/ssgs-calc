@@ -1,14 +1,14 @@
 {
   "name": "ssgs-calc",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A CLI-based calculator for SSGS calculations.",
+  "main": "src/index.js",
   "scripts": {
     "start": "node index.js",
     "test": "jest --coverage"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["calculator", "cli", "node", "ssgs"],
+  "author": "KintsuKayaba",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
@@ -16,5 +16,8 @@
   },
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "engines": {
+  "node": ">=16.0.0"
   }
 }
